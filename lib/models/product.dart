@@ -38,10 +38,10 @@ class Product {
   }
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'title': title,
-    'barcode': barcode,
-    'description': description,
-    'price': price,
-  };
+        'id': id,
+        'title': title,
+        'barcode': barcode,
+        'description': description,
+        'price': price,
+      };
 }

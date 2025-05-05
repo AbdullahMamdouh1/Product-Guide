@@ -43,8 +43,9 @@ class _ProductsScreenState extends State<ProductsScreen> {
 
   void onScan(String barcode) {
     final match = allProducts.firstWhere(
-          (p) => p.barcode == barcode,
-      orElse: () => Product(id: 0, title: '', barcode: '', description: '', price: 0.0),
+      (p) => p.barcode == barcode,
+      orElse: () =>
+          Product(id: 0, title: '', barcode: '', description: '', price: 0.0),
     );
     if (match.id != 0) {
       Navigator.push(
@@ -75,7 +76,8 @@ class _ProductsScreenState extends State<ProductsScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (_) => BarcodeScannerScreen(onScanned: onScan),
+                          builder: (_) =>
+                              BarcodeScannerScreen(onScanned: onScan),
                         ),
                       );
                     },
@@ -120,27 +122,32 @@ class _ProductsScreenState extends State<ProductsScreen> {
               isLoading
                   ? const CircularProgressIndicator()
                   : Expanded(
-                child: ListView.builder(
-                  itemCount: filteredProducts.length,
-                  itemBuilder: (context, index) {
-                    final product = filteredProducts[index];
-                    return Card(
-                      child: ListTile(
-                        title: Text(product.title,style: TextStyle(),),
-                        subtitle: Text(' الباركود: ${product.barcode} \n  السعر:  ${product.price} جنيه'),
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (_) => ProductDetailsScreen(product: product),
+                      child: ListView.builder(
+                        itemCount: filteredProducts.length,
+                        itemBuilder: (context, index) {
+                          final product = filteredProducts[index];
+                          return Card(
+                            child: ListTile(
+                              title: Text(
+                                product.title,
+                                style: TextStyle(),
+                              ),
+                              subtitle: Text(
+                                  ' الباركود: ${product.barcode} \n  السعر:  ${product.price} جنيه'),
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (_) =>
+                                        ProductDetailsScreen(product: product),
+                                  ),
+                                );
+                              },
                             ),
                           );
                         },
                       ),
-                    );
-                  },
-                ),
-              ),
+                    ),
             ],
           ),
         ),

@@ -19,29 +19,37 @@ class ProductDetailsScreen extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  const Text('الاسم :  ', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18)),
-                  Text(product.title,style: TextStyle( fontSize: 18)),
+                  const Text('الاسم :  ',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+                  Text(product.title, style: TextStyle(fontSize: 18)),
                 ],
               ),
               const SizedBox(height: 20),
               Row(
                 children: [
-                  const Text(' السعر:  ', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18)),
-                  Text('${product.price} جنيه  ',style: TextStyle( fontSize: 18)),
+                  const Text(' السعر:  ',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+                  Text('${product.price} جنيه  ',
+                      style: TextStyle(fontSize: 18)),
                 ],
               ),
               const SizedBox(height: 20),
               Row(
                 children: [
-                  const Text('الباركود:  ', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18)),
-                  Text(product.barcode,style: TextStyle( fontSize: 18)),
+                  const Text('الباركود:  ',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+                  Text(product.barcode, style: TextStyle(fontSize: 18)),
                 ],
               ),
               const SizedBox(height: 20),
-              const Text('الوصف:', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18)),
-        Text((product.description?.trim().isNotEmpty ?? false)
-            ? product.description!
-            : 'لا يوجد وصف'),
+              const Text('الوصف:',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+              Text((product.description?.trim().isNotEmpty ?? false)
+                  ? product.description!
+                  : 'لا يوجد وصف'),
             ],
           ),
         ),
