@@ -22,10 +22,13 @@ class _BarcodeScannerScreenState extends State<BarcodeScannerScreen> {
 
   void _onQRViewCreated(QRViewController ctrl) {
     controller = ctrl;
+
     controller!.scannedDataStream.listen((scanData) {
-      controller!.pauseCamera();
       widget.onScanned(scanData.code ?? '');
-      Navigator.pop(context);
+
+      // controller!.pauseCamera();
+
+      // controller!.resumeCamera();
     });
   }
 

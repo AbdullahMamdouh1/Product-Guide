@@ -47,6 +47,7 @@ class _ProductsScreenState extends State<ProductsScreen> {
       orElse: () =>
           Product(id: 0, title: '', barcode: '', description: '', price: 0.0),
     );
+
     if (match.id != 0) {
       Navigator.push(
         context,
